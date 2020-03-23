@@ -2,7 +2,7 @@ import xlrd
 import random
 import tkinter as tk
 import pygame
-
+# 点名
 workbook = xlrd.open_workbook("name.xls")  # 读取表格
 Data_sheet = workbook.sheets()[0]  # 读取sheet1
 name_list = Data_sheet.col_values(1)  # 读取第二列
