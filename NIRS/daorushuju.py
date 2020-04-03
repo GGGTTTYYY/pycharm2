@@ -17,3 +17,4 @@ print(x)
 plt.figure()
 plt.plot(y,x)
 plt.show()
+# 画出原始光谱图
