@@ -15,7 +15,7 @@ SCREEN_HEIGHT = 800
 # 成员主要是子弹的图片对象和子弹刷出来的位置，还有移动速度。
 # 一个方法就是移动，从发出位置直线往屏幕上方移动。
 
-class Bullet():
+class Bullet(pygame.sprite.Sprite):
     def __init__(self, bullet_img, init_pos):
         pygame.sprite.Sprite.__init__(self)  # 调用父类（Sprite）的构造函数
         self.image = bullet_img  # 定义实例属性：image
@@ -178,7 +178,7 @@ while running:
     enemy_frequency += 1
     if enemy_frequency >= 100:
         enemy_frequency = 0
-
+    # 子弹移动
     for bullet in player.bullets:
         # 以固定速度移动子弹
         bullet.move()  # 这个bullet相当于player.bullets
@@ -248,9 +248,9 @@ while running:
     # 处理游戏退出
     # pygame.event,get 从队列中获取事件
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:  # QUIT为pygame自带的事件
-            pygame.quit()
-            exit()
+       if event.type == pygame.QUIT:  # QUIT为pygame自带的事件
+           pygame.quit()
+           exit()
 
     # 获取键盘事件（上下左右按键）
     # pygame.key 模块: pygame模块与键盘一起工作
